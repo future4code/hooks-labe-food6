@@ -12,6 +12,5 @@ background-color: #5CB646;
 export const ErrorImage = styled.img`
    width: 100vw;
    max-width: 900px;
-   margin-top: -100px;
-   margin-bottom: 20px;
+   margin-top: -60px;
 `
