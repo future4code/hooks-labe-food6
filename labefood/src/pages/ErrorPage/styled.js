@@ -6,7 +6,7 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 height: 100vh;
-background-color: #5CB646;
+background-color: rgb(92, 182, 70, 70%);
 `
 
 export const ErrorImage = styled.img`
