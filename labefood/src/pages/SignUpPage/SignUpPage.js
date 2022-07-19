@@ -1,9 +1,11 @@
 import React from 'react'
 
 const SignUpPage = () => {
-   <div>
-      Página de Cadastro
-   </div>
+   return (
+      <div>
+         Página de Cadastro
+      </div>
+   )
 }
 
 export default SignUpPage

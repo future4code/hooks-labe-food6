@@ -1,9 +1,11 @@
 import React from 'react'
 
 const CartPage = () => {
-   <div>
-      Carrinho
-   </div>
+   return (
+      <div>
+         <h1>Carrinho</h1>
+      </div>
+   )
 }
 
 export default CartPage

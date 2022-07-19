@@ -1,9 +1,11 @@
 import React from 'react'
 
 const AdressPage = () => {
-   <div>
-      Página de endereço
-   </div>
+   return (
+      <div>
+         <h1>Página de endereço</h1>
+      </div>
+   )
 }
 
 export default AdressPage

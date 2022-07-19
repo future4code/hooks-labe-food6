@@ -1,9 +1,11 @@
 import React from 'react'
 
 const UpdatePage = () => {
-   <div>
-      Atualizar perfil
-   </div>
+   return (
+      <div>
+         Atualizar perfil
+      </div>
+   )
 }
 
 export default UpdatePage

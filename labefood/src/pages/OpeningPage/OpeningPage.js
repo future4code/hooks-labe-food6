@@ -1,9 +1,11 @@
 import React from 'react'
 
-const OpiningPage = () => {
-   <div>
-      Pagina inicial
-   </div>
+const OpeningPage = () => {
+   return (
+      <div>
+         <h1>Pagina inicial</h1>
+      </div>
+   )
 }
 
-export default OpiningPage
+export default OpeningPage
