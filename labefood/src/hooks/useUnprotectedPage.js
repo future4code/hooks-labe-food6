@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom"
 import { useEffect } from "react"
-import { goToFeedPage } from "../routes/coordinator"
+import { goToFeedPage } from "../routes/coodinator"
 
 const useUnprotectdPage = () => {
 
