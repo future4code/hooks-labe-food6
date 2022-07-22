@@ -1,45 +1,33 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
-export const DivText = styled.div`
-   display: flx;
-   justify-content: center;
-   align-items: center;
-   height: 8vh;
-   font-weight: bold;
-
-   hr{
-      width: 100vw;
-   }
-`
-
-export const DivTextButton = styled.div`
-   width: 100%;
-   display: grid;
-   grid-template-columns: 20% 60% 20%;
-   height: 8vh;
-   align-items: center;
-   justify-items: center;
-
-   p{
-      text-align: center;
-      grid-column: 2/3;
-      font-weight: bold;
-   }
-`
-
-export const DivButton = styled.div`
-   display: grid;
-   grid-template-columns: 20% 80%;
-   height: 8vh;
-   align-items: center;
-   justify-items: center;
-
-   hr{
-      width: 100%;
-   }
-
-   button{
-      text-align: center;
-      grid-column: 1/2;
-   }
+export const HeaderMainDiv = styled.div`
+display: flex; 
+align-items: center; 
+justify-content: space-between; 
+max-width: 100vw; 
+height: 46px; 
+border-bottom: 1px rgb(0, 0, 0, 0.25) solid; 
+//image is 23px by 24px
+img {
+    max-width: 23px; 
+    max-height: 24px; 
+    margin-left: 16px; 
+}
+p{
+    text-align: center; 
+}
+#spacingRight{
+    height: 24px; 
+    width: 23px; 
+    max-width: 23px; 
+    max-height: 24px; 
+    margin-right: 16px; 
+}
+#spacingLeft{
+    height: 24px; 
+    width: 23px; 
+    max-width: 23px; 
+    max-height: 24px; 
+    margin-left: 16px; 
+}
 `
