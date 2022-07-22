@@ -9,14 +9,14 @@ export const ScreenContainer = styled.div`
 `
 
 export const LogoImage = styled.img`
-   width: 110px;
-   height: 65px;
+   width: 115px;
+   height: 70px;
 `
 
 export const SubTitle = styled.p`
    font-weight: bold;
-   font-size: 16px;
-   margin-top: 5vh;
+   font-size: 20px;
+   margin-top: 4vh;
    margin-bottom: 3vh;
 `
 
@@ -33,6 +33,11 @@ export const InputsContainer = styled.form`
       text-transform: capitalize;
       font-size: 16px;
       font-weight: bold;
+
+      img {
+         max-width: 50px; 
+         max-height: 50px;
+      } 
    }
 `
 
