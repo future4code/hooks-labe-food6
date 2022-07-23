@@ -1,20 +1,24 @@
 import React from 'react'
 import logo from "../../assets/logo.png"
-import LoginForm from "./LoginForm";
-import { ScreenContainer, LogoImage, SubTitle, SignUpButton } from "./styled";
-import { Button } from "@material-ui/core";
+import LoginForm from "./LoginForm"
+import { ScreenContainer, LogoImage, SubTitle, SignUpButton } from "./styled"
+import { Button } from "@material-ui/core"
+import { useNavigate } from 'react-router-dom'
+import { goTosignUpPage } from '../../routes/coodinator'
 
 const LoginPage = () => {
+   const navigate = useNavigate()
    return (
+
       <ScreenContainer>
-         <LogoImage src={logo} alt={"Imagem da logo Rappi4"} />
+         <LogoImage src={logo} alt={"Imagem da Future Eats"} />
 
          <SubTitle> Entrar </SubTitle>
 
          <LoginForm />
 
          <Button
-            onClick={() => null}
+            onClick={() => goTosignUpPage(navigate)}
             type={"submit"}
             variant={"text"}
             color={"inherit"}
