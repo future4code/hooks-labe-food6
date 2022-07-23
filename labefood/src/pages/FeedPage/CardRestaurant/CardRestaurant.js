@@ -1,11 +1,28 @@
 import React from "react"
+import { RestaurantCard, RestaurantImageDiv, RestaurantInfosDiv } from "./styled"
 
-const CardRestaurant = (props) => {
+{/* infornações sobre o restaurante */}
+
+const CardRestaurant = ({restaurant}) => {
 
    return (
-      <div>
-         infornações sobre o restaurante
-      </div>
+      <RestaurantCard>
+         {/* logo do restaurante */}
+         <RestaurantImageDiv>
+            <img src={restaurant.logoUrl} />
+         </RestaurantImageDiv>
+         
+         {/* nome do restaurante */}
+         <RestaurantInfosDiv>
+            <h2>{restaurant.name}</h2>
+            <div>
+               {/* tempo de delivery */}
+               <span>{restaurant.deliveryTime} min</span>
+               {/* preço de delivery */}
+               <span>Frete-R${restaurant.shipping},00</span>
+            </div>
+         </RestaurantInfosDiv>
+      </RestaurantCard>
    )
 }
 
