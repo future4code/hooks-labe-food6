@@ -27,7 +27,7 @@ const Restaurants = ({restaurants, restaurantCategory, search, searching}) => {
         return <CardRestaurant restaurant={restaurant} />
         })
 
-    return <>{searching&&!search? <SearchSpan>Busque por nome de restaurante</SearchSpan> :<RestaurantCardsDiv>{ restaurantMap}</RestaurantCardsDiv>}</>
+    return <RestaurantCardsDiv>{searching&&!search? <SearchSpan>Busque por nome de restaurante</SearchSpan> : restaurantMap}</RestaurantCardsDiv>
 }
 
 export default Restaurants

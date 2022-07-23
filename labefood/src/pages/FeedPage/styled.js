@@ -5,21 +5,23 @@ export const ScreenContainer = styled.div`
    display: flex;
    justify-content: center;
    width: 100vw;
-   height: 92vh;
+   height: 90vh;
    padding: 5vh 0;
-   overflow-y: scroll;
-
+   
    &>div{
     display: flex;
     width: 350px;
     flex-direction: column;
     align-items: center;
+
    }
 `
 
 export const CategoriesDiv = styled.div`
 display: flex;
 width: 100%;
+height: 4vh;
+padding: 1vh 0;
 overflow-x: scroll;
 margin: 5vh 0;
 
@@ -40,7 +42,7 @@ export const UnSelectedCategorie = styled.button`
 background-color: transparent;
 border: none;
 cursor: pointer;
-margin: 0 1vw;
+margin: 0 20px;
 font-weight: 600;
 `
 
@@ -50,8 +52,22 @@ color: ${primaryColor};
 
 export const RestaurantCardsDiv = styled.div`
 width: 100%;
-flex-grow: 1;
+max-height: 50vh;
 padding: 2vh 0;
+overflow-y: scroll;
+
+
+&::-webkit-scrollbar {
+  display:none;           
+}
+
+&::-webkit-scrollbar-track {
+    display:none;           
+}
+
+&::-webkit-scrollbar-thumb {
+    display:none;           
+}
 
 display: flex;
 flex-direction: column;
