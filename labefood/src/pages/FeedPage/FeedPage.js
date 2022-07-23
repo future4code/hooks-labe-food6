@@ -3,7 +3,7 @@ import useProtectdPage from "../../hooks/useProtectedPage"
 import { Footer } from "../../components/Footer/Footer"
 import useRequestData from '../../hooks/useRequestPage'
 import { BASE_URL } from '../../constants/urls'
-import {ScreenContainer, SelectedCategorie, UnSelectedCategorie, CategoriesDiv, RestaurantCardsDiv, SearchingHeaderDiv, SearchInput} from './styled'
+import {ScreenContainer, SelectedCategorie, UnSelectedCategorie, CategoriesDiv, SearchingHeaderDiv, SearchInput, SearchLabel} from './styled'
 import IsLoading from './IsLoading'
 import {restaurants} from './test'
 import { categories } from './restaurantsInfos'
@@ -34,15 +34,26 @@ const FeedPage = () => {
          <ScreenContainer>
             <div>
 
-               {searching? <SearchingHeaderDiv><span className="material-icons">arrow_back_ios</span><h1>Busca</h1></SearchingHeaderDiv> : <h1>FutureEats</h1>}
+               {searching? <SearchingHeaderDiv>
+                  <span 
+                  onClick={()=>setSearching(state => !state)}
+                  className="material-icons">arrow_back_ios</span>
+                  <h1>Busca</h1>
+               </SearchingHeaderDiv> 
+               : 
+               <h1>FutureEats</h1>}
 
-               <SearchInput 
-               name='search'
-               value={search}
-               onChange={onChange}
-               onFocus={()=>setSearching(state => !state)}
-               onBlur={()=>setSearching(state => !state)}
-               />
+               <SearchLabel>
+                  <span class="material-icons">
+                  search
+                  </span>
+                  <SearchInput 
+                  name='search'
+                  value={search}
+                  onChange={onChange}
+                  onFocus={()=>setSearching(state => !state)}
+                  />
+               </SearchLabel>
 
                {!searching && <CategoriesDiv>
                   {categories.length>0 && CategoriesButtons}

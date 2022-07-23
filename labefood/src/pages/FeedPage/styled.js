@@ -71,6 +71,7 @@ align-items: center;
 span{
     font-size: 16px;
     font-weight: 600;
+    cursor: pointer;
 }
 
 h1{
@@ -79,8 +80,29 @@ h1{
 `
 
 export const SearchInput = styled.input`
+height: 4vh;
+margin-left: 1vw;
+border: none;
+
+&:focus{
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+}
+` 
+
+export const SearchLabel = styled.label`
+display: flex;
+align-items: center;
 margin-top: 4vh;
 width: 95%;
 height: 8vh;
 padding: 2vh;
-` 
+cursor: text;
+border: 2px solid ${lightColor};
+border-radius: 5px;
+
+span{
+    color: ${lightColor};
+}
+`
