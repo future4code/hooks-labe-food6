@@ -5,11 +5,11 @@ import { goToFeedPage } from "../../routes/coodinator"
 import { OpeningDiv } from "./styled"
 
 const OpeningPage = () => {
-   const navigate = useNavigate()
 
+   const navigate = useNavigate()
    useEffect(() => {
       setTimeout(() => { goToFeedPage(navigate) }, 5000)
-   }, [])
+   }, [navigate])
 
    return (
       <OpeningDiv>
