@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import useProtectdPage from "../../hooks/useProtectedPage"
 import { Footer } from "../../components/Footer/Footer"
 import useRequestData from '../../hooks/useRequestPage'

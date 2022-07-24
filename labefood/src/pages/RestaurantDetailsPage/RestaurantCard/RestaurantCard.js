@@ -1,16 +1,13 @@
 import React from "react"
 import { RestaurantCard, RestaurantImageDiv, RestaurantInfosDiv } from "./styled"
-import { goToDetailsPage } from '../../../routes/coodinator'
-import { useNavigate } from 'react-router-dom'
 
 
 {/* infornações sobre o restaurante */}
 
 const CardRestaurant = ({restaurant}) => {
-   const navigate = useNavigate()
 
    return (
-      <RestaurantCard onClick={()=>goToDetailsPage(navigate, restaurant.id)}>
+      <RestaurantCard>
          {/* logo do restaurante */}
          <RestaurantImageDiv>
             <img src={restaurant.logoUrl} />
@@ -20,10 +17,16 @@ const CardRestaurant = ({restaurant}) => {
          <RestaurantInfosDiv>
             <h2>{restaurant.name}</h2>
             <div>
+                <span>{restaurant.category}</span>
+            </div>
+            <div>
                {/* tempo de delivery */}
                <span>{restaurant.deliveryTime} min</span>
                {/* preço de delivery */}
                <span>Frete-R${restaurant.shipping},00</span>
+            </div>
+            <div>
+                <span>{restaurant.address}</span>
             </div>
          </RestaurantInfosDiv>
       </RestaurantCard>

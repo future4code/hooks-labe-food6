@@ -9,7 +9,7 @@ const Restaurants = ({restaurants, restaurantCategory, search, searching}) => {
         if(!searching) return restaurantCategory? restaurant.category === restaurantCategory : true
         return true
     }
-    
+  
     // filtra por nome
     const restaurantSearchFilter = (restaurant) => {
         if(search){
@@ -24,7 +24,7 @@ const Restaurants = ({restaurants, restaurantCategory, search, searching}) => {
         restaurants.filter(restaurantCategoryFilter)
         .filter(restaurantSearchFilter)
         .map((restaurant)=>{
-        return <CardRestaurant restaurant={restaurant} />
+        return <CardRestaurant  restaurant={restaurant} />
         })
 
     return <RestaurantCardsDiv>{searching&&!search? <SearchSpan>Busque por nome de restaurante</SearchSpan> : restaurantMap}</RestaurantCardsDiv>

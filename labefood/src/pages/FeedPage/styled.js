@@ -6,13 +6,15 @@ export const ScreenContainer = styled.div`
    justify-content: center;
    width: 100vw;
    height: 90vh;
-   padding: 5vh 0;
    
    &>div{
+    padding: 5vh 0;
     display: flex;
     width: 350px;
     flex-direction: column;
     align-items: center;
+    border-right: 1px solid ${lightColor};
+    border-left: 1px solid ${lightColor};
 
    }
 `
@@ -55,7 +57,6 @@ width: 100%;
 max-height: 50vh;
 padding: 2vh 0;
 overflow-y: scroll;
-
 
 &::-webkit-scrollbar {
   display:none;           
