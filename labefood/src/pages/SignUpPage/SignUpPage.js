@@ -1,6 +1,6 @@
 import React from "react"
 import Header from "../../components/Header/Header"
-import SingUpForm from "./SignUpForm/SignUpForm";
+import SignUpForm from "./SignUpForm/SignUpForm";
 import { ContainerSingup, Title } from "./styled";
 import logo from "../../assets/logo.png"
 
@@ -15,7 +15,7 @@ function SignUpPage() {
 
             <Title> Cadastrar </Title>
 
-            <SingUpForm />
+            <SignUpForm />
          </ContainerSingup>
       </div>
    )

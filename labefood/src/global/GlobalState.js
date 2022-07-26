@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { GlobalContext } from './GlobalContext'
 
 export default function GlobalState(props) {

@@ -6,15 +6,10 @@ import useForm from '../../hooks/useForm'
 import { BASE_URL } from '../../constants/urls'
 import { goToFeedPage } from '../../routes/coodinator'
 import { InputsContainer } from "./styled"
-import { InputLabel, OutlinedInput, TextField } from "@material-ui/core";
-import { FormControl } from '@material-ui/core'
-import { InputAdornment } from '@material-ui/core'
-import { IconButton } from '@material-ui/core'
-import { Visibility } from '@material-ui/icons'
-import { VisibilityOff } from '@material-ui/icons'
-import { Button } from "@material-ui/core"
+import { InputLabel, OutlinedInput, TextField, FormControl, InputAdornment, IconButton, Button, CircularProgress } from "@material-ui/core";
+import { Visibility, VisibilityOff } from '@material-ui/icons'
 // import Loading from '../../assets/myLoading.svg'
-import { CircularProgress } from "@material-ui/core"
+
 
 const LoginForm = () => {
 
@@ -117,7 +112,6 @@ const LoginForm = () => {
             color={"primary"}
             fullWidth
          >
-            {/* {isLoading ? <img src={Loading} alt='' /> : "Entrar"} */}
             {isLoading ? <CircularProgress color={"inherit"} size={26} /> : "Entrar"}
          </Button>
       </InputsContainer>

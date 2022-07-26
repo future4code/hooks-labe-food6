@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react'
 import { useNavigate } from "react-router-dom"
 import openHome from "../../assets/openHome.png"
-import { goToFeedPage } from "../../routes/coodinator"
+import { goToLoginPage } from "../../routes/coodinator"
 import { OpeningDiv } from "./styled"
 
 const OpeningPage = () => {
 
    const navigate = useNavigate()
    useEffect(() => {
-      setTimeout(() => { goToFeedPage(navigate) }, 5000)
+      setTimeout(() => { goToLoginPage(navigate) }, 5000)
    }, [navigate])
 
    return (
