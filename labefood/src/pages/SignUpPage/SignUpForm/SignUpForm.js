@@ -1,23 +1,18 @@
-import React, { useState } from "react"
-import { useNavigate } from "react-router-dom"
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { goToAdressPage } from "../../../routes/coodinator"
 import useForm from "../../../hooks/useForm"
 import axios from "axios"
 import { BASE_URL } from "../../../constants/urls"
 import { ContainerForm } from "./styled"
-import { FormControl, IconButton, InputAdornment, InputLabel, OutlinedInput, TextField, Button } from "@material-ui/core"
+import { FormControl, IconButton, InputAdornment, InputLabel, OutlinedInput, TextField, Button, CircularProgress } from "@material-ui/core";
 import { Visibility, VisibilityOff } from "@material-ui/icons"
-import { CircularProgress } from "@material-ui/core"
 
-const SignUpForm = () => {
+
+export const SignUpForm = () => {
 
    const navigate = useNavigate()
-   const { form, onChange, clear } = useForm({
-      name: "",
-      email: "",
-      cpf: "",
-      password: ""
-   })
+   const { form, onChange } = useForm({ name: "", email: "", cpf: "", password: "" })
    const [passwordConfirm, setPasswordConfirm] = useState("")
    const [isLoading, setIsLoading] = useState(false)
    const [values, setValues] = useState({ showPassword: false, showConfirmPassword: false })
@@ -27,11 +22,11 @@ const SignUpForm = () => {
    }
 
    const handleClickShowConfirmPassword = () => {
-      setValues({ ...values, showConfirmPassword: !values.showConfirmPassword })
+      setValues({ ...values, showConfirmPassword: !values.showConfirmPassword });
    }
 
    const handleMouseDownPassword = (event) => {
-      event.preventDefault()
+      event.preventDefault();
    };
 
    const onSubmitForm = (event) => {
@@ -46,18 +41,17 @@ const SignUpForm = () => {
 
    const postSingUp = async (body, navigate) => {
       setIsLoading(true)
-
-      try {
-         const res = await axios.post(`${BASE_URL}signup`, body)
-         localStorage.setItem("token", res.data.token);
-         setIsLoading(false)
-         clearPasswordConfirm()
-         goToAdressPage(navigate)
-         clear()
-      } catch (err) {
-         alert("Erro: ", err.response.data.message)
-         setIsLoading(false)
-      }
+      axios.post(`${BASE_URL}/signup`, body)
+         .then((res) => {
+            localStorage.setItem("token", res.data.token);
+            setIsLoading(false)
+            clearPasswordConfirm()
+            goToAdressPage(navigate)
+         })
+         .catch((err) => {
+            alert("Erro: ", err.response.data.message)
+            setIsLoading(false)
+         })
    }
 
    const onChangePasswordConfirm = (event) => {
@@ -92,7 +86,7 @@ const SignUpForm = () => {
                label={"E-mail"}
                variant={"outlined"}
                inputProps={{
-                  pattern: "[a-z0-9._%+-]+@[a-z0-9.-]+ [a-z]{2,}$",
+                  pattern: "[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$",
                   title: "Digite um E-mail válido com letras minúsculas"
                }}
                fullWidth
@@ -110,7 +104,7 @@ const SignUpForm = () => {
                label={"CPF"}
                variant={"outlined"}
                inputProps={{
-                  pattern: "([0-9]{3}[.]?[0-9]{3}[.]?[0-9]{3}[-]?[0-9]{2})",
+                  pattern: "([0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2})",
                   title: "Digite um CPF válido"
                }}
                fullWidth
@@ -217,7 +211,7 @@ const SignUpForm = () => {
             </Button>
          </ContainerForm>
       </div>
-   )
-}
+   );
+};
 
 export default SignUpForm

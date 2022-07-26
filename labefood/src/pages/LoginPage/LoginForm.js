@@ -117,7 +117,6 @@ const LoginForm = () => {
             color={"primary"}
             fullWidth
          >
-            {/* {isLoading ? <img src={Loading} alt='' /> : "Entrar"} */}
             {isLoading ? <CircularProgress color={"inherit"} size={26} /> : "Entrar"}
          </Button>
       </InputsContainer>
