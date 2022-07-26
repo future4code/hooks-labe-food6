@@ -42,6 +42,7 @@ function AdressPage() {
       setIsLoading(true)
       axios.put(`${BASE_URL}/address`, body, auth)
          .then((res) => {
+            localStorage.setItem('token',res.data.token)
             alert("Cadastrado com sucesso")
             goToLoginPage(navigate)
             setIsLoading(false)
