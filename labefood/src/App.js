@@ -1,20 +1,16 @@
+import { ThemeProvider } from '@mui/material/styles'
+import Router from "./routes/Router" 
 import React from 'react'
-import { GlobalStyle } from './styedApp'
-import Router from './routes/Router'
-import theme from './constants/theme'
-import { ThemeProvider } from '@material-ui/core/styles'
-import GlobalState from "./global/GlobalState"
+import { GlobalStyle } from './global/GlobalStyle'
+import theme from './theme/theme'
 
-const App = () => {
 
+function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <GlobalState>
+      <ThemeProvider theme={theme}>
         <GlobalStyle />
         <Router />
-      </GlobalState>
-    </ThemeProvider>
-  )
+      </ThemeProvider>
+  );
 }
-
-export default App
+export default App;
