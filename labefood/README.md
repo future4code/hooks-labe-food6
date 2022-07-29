@@ -8,11 +8,6 @@
 <img src="./src/assets/logo.png" width="40%" height="20%"/>
 </p>
 
-<h1 align="center">
-    <br>
-    <p align="center" style="font-weight: bold;">🚀 Projeto LabeFood </p>
-</h1>
-
 <br>
 
 <h1>
