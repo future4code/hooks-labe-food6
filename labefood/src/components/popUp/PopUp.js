@@ -1,32 +1,30 @@
-import React, { useEffect, useState } from "react";
-import { MainContainer } from "./PopoUpStyle";
-import AccessTimeIcon from "@mui/icons-material/AccessTime";
-import { getActiveOrder } from "../../services/requests";
+import React, { useEffect, useState } from "react"
+import { MainContainer } from "./styled"
+import AccessTimeIcon from "@mui/icons-material/AccessTime"
+import { getActiveOrder } from "../../services/requests"
 
 export const PopUp = () => {
 
 
-  let [activeOrder, setActiveOrder] = useState(null); 
+  let [activeOrder, setActiveOrder] = useState(null);
 
-  useEffect(()=>{
-    let token = window.sessionStorage.getItem('token'); 
+  useEffect(() => {
+    let token = window.sessionStorage.getItem('token');
 
     getActiveOrder(`active-order`, token, setActiveOrder)
 
-  },[activeOrder])
+  }, [activeOrder])
 
   let expireDate = new Date(Date.now())
-  if(activeOrder && activeOrder.expiresAt)
-  {
+  if (activeOrder && activeOrder.expiresAt) {
     let expirationDate = new Date(activeOrder.expiresAt)
-    if(expireDate === expirationDate)
-    {
-      setActiveOrder(null); 
+    if (expireDate === expirationDate) {
+      setActiveOrder(null);
     }
   }
-  
+
   return (
-   activeOrder &&  <MainContainer>
+    activeOrder && <MainContainer>
       <div className="content">
         <div className="first">
           <AccessTimeIcon />
@@ -37,7 +35,7 @@ export const PopUp = () => {
           <p className="line3">SUBTOTAL {new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(activeOrder.totalPrice)}</p>
         </div>
       </div>
-      
+
     </MainContainer>
   );
 };

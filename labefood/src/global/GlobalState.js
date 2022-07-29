@@ -1,5 +1,5 @@
 import { GlobalContext } from './GlobalContext'
-import React, {useContext, useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 
 export const GlobalStateProvider = (props) => {
 
@@ -15,17 +15,17 @@ export const GlobalStateProvider = (props) => {
     // info filtro
     const [filter, setFilter] = useState("")
 
-    useEffect(()=>{
+    useEffect(() => {
         const cartLocal = window.localStorage.getItem('cart')
         cartLocal && setCart(JSON.parse(cartLocal))
-    },[])
-    
-    let states = {user, cart, order, filter}; 
-    let setters = {setUser, setCart, setOrder, setFilter}
-    
+    }, [])
+
+    let states = { user, cart, order, filter };
+    let setters = { setUser, setCart, setOrder, setFilter }
+
 
     return (
-        <GlobalContext.Provider value = {{states, setters}}>
+        <GlobalContext.Provider value={{ states, setters }}>
             {props.children}
         </GlobalContext.Provider>
     )

@@ -1,9 +1,9 @@
-import  React, {useContext} from "react";
-import { styled } from "@mui/material/styles";
-import AppBar from "@mui/material/AppBar";
-import ScroolableTabs from "../ScrollableTabs/ScrollableTabs";
-import { SearchContainer, Icon } from "./styled";
-import { Link } from "react-router-dom";
+import React, { useContext } from "react"
+import { styled } from "@mui/material/styles"
+import AppBar from "@mui/material/AppBar"
+import ScroolableTabs from "../ScrollableTabs/ScrollableTabs"
+import { SearchContainer, Icon } from "./styled"
+import { Link } from "react-router-dom"
 import { GlobalContext } from '../../global/GlobalContext'
 
 const AppBarr = styled(AppBar)`
@@ -13,15 +13,15 @@ const AppBarr = styled(AppBar)`
 `;
 
 const SearchAppBar = () => {
-  const {setters} = useContext(GlobalContext); 
-  const {setFilter} = setters; 
-  const onClcik = () =>{
+  const { setters } = useContext(GlobalContext);
+  const { setFilter } = setters;
+  const onClcik = () => {
     setFilter("")
   }
   return (
     <>
       <AppBarr position="static" sx={{ backgroundColor: "#FFFFFF" }}>
-        <Link to="/search" style={{textDecorationLine: 'none'}} onClick={()=>onClcik()}>
+        <Link to="/search" style={{ textDecorationLine: 'none' }} onClick={() => onClcik()}>
           <SearchContainer>
             <Icon>
               <svg

@@ -58,7 +58,7 @@ O layout foi desenvolvido pela designer Camila Mizutani e pode ser acessado [cli
     <p style="font-weight: bold;">🔗 Link do projeto no Surge</p>
 </h1>
 
-Acesse nosso site [clicando aqui!](https://labefood5-shaw.surge.sh)
+Acesse nosso site [clicando aqui!](https://cheap-sign.surge.sh)
 
 <h1>
     <br>

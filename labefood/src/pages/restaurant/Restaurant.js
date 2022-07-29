@@ -1,17 +1,17 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { GlobalContext } from '../../global/GlobalContext';
+import { GlobalContext } from '../../global/GlobalContext'
 import Header from '../../components/Header/Header'
-import { CardsContainer, Categories, CategoryTitle, InfoDiv, Infos, Logo, Name, PageContainer, RestaurantContainer, RestaurantInfo } from './styled';
-import CardProduct from '../../components/cardProduct/CardProduct';
-import { Alert, Box, Button, FormControl, MenuItem, Modal, Select, Snackbar, Typography } from '@mui/material';
+import { CardsContainer, Categories, CategoryTitle, InfoDiv, Infos, Logo, Name, PageContainer, RestaurantContainer, RestaurantInfo } from './styled'
+import CardProduct from '../../components/cardProduct/CardProduct'
+import { Alert, Box, Button, FormControl, MenuItem, Modal, Select, Snackbar, Typography } from '@mui/material'
 import { useParams } from 'react-router-dom'
 import { getRequest } from '../../services/requests'
-import { useProtectedPage } from '../../hooks/useProtectedPage';
+import { useProtectedPage } from '../../hooks/useProtectedPage'
 
 const RestaurantPage = () => {
 
     useProtectedPage()
-    
+
     const [quantity, setQuantity] = useState(1)
     const [categories, setCategories] = useState([])
     const [restaurant, setRestaurant] = useState({})
@@ -74,40 +74,40 @@ const RestaurantPage = () => {
 
     const addCart = () => {
         const idCart = window.localStorage.getItem('resId')
-        if(!idCart || params.id === idCart){
-            
-        const restaurantCopy = [...restaurant.restaurant.products]
+        if (!idCart || params.id === idCart) {
 
-        const product = restaurantCopy.filter((item) => {
-            return item.id === productId
-        })
+            const restaurantCopy = [...restaurant.restaurant.products]
 
-        const productCopy = { ...product[0], quantity: quantity, restaurant: restaurant.restaurant.name }
-        setCart([...cart, productCopy])
+            const product = restaurantCopy.filter((item) => {
+                return item.id === productId
+            })
 
-        window.localStorage.setItem('cart', JSON.stringify([...cart, productCopy]))
+            const productCopy = { ...product[0], quantity: quantity, restaurant: restaurant.restaurant.name }
+            setCart([...cart, productCopy])
 
-        const index = restaurantCopy.findIndex((item) => item.id === productId)
+            window.localStorage.setItem('cart', JSON.stringify([...cart, productCopy]))
 
-        restaurantCopy[index] = productCopy
+            const index = restaurantCopy.findIndex((item) => item.id === productId)
 
-        setRestaurant({
-            ...restaurant,
-            restaurant: {
-                ...restaurant.restaurant, products: restaurantCopy
-            }
-        })
+            restaurantCopy[index] = productCopy
 
-        window.localStorage.setItem(restaurant.restaurant.id, JSON.stringify({
-            ...restaurant,
-            restaurant: {
-                ...restaurant.restaurant, products: restaurantCopy
-            }
-        }))
+            setRestaurant({
+                ...restaurant,
+                restaurant: {
+                    ...restaurant.restaurant, products: restaurantCopy
+                }
+            })
 
-        handleClose()
-        setQuantity(1)
-        window.localStorage.setItem('resId',params.id)
+            window.localStorage.setItem(restaurant.restaurant.id, JSON.stringify({
+                ...restaurant,
+                restaurant: {
+                    ...restaurant.restaurant, products: restaurantCopy
+                }
+            }))
+
+            handleClose()
+            setQuantity(1)
+            window.localStorage.setItem('resId', params.id)
         } else {
             setMessageError('Conclua seu pedido atual ou remova do carrinho!')
             setOpenAlert(true)
@@ -133,7 +133,7 @@ const RestaurantPage = () => {
             restaurant: {
                 ...restaurant.restaurant, products: restaurantCopy
             }
-        })  
+        })
 
         window.localStorage.setItem(restaurant?.restaurant.id, JSON.stringify({
             ...restaurant,
@@ -170,9 +170,9 @@ const RestaurantPage = () => {
                                         restaurant.restaurant.products.map((product) => {
                                             if (item === product.category) {
                                                 return (
-                                                    <CardProduct 
+                                                    <CardProduct
                                                         key={product.id}
-                                                        product={product} 
+                                                        product={product}
                                                         addButton={handleOpen}
                                                         setProductId={setProductId}
                                                         removeButton={remove}

@@ -1,40 +1,40 @@
-import React, { useEffect, useState, useContext} from "react";
-import { MainContainer, SearchContainer, Headers, Icon, Back, Main } from "./styled";
-import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
-import { Link } from "react-router-dom";
-import {CardImageF} from "../../components/card/Card"
+import React, { useEffect, useState, useContext } from "react"
+import { MainContainer, SearchContainer, Headers, Icon, Back, Main } from "./styled"
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos"
+import { Link } from "react-router-dom"
+import { CardImageF } from "../../components/card/Card"
 import { GlobalContext } from '../../global/GlobalContext'
 
 const SearchPage = () => {
-   const {states, setters} = useContext(GlobalContext); 
-    const {filter} = states; 
-    const {setFilter} = setters; 
-   
-    const [inicial, setInicial] = useState(true)
-    const [active, setActive] = useState(false)
-    const Handler = (e) =>{
-        setFilter(e.target.value)
+  const { states, setters } = useContext(GlobalContext)
+  const { filter } = states
+  const { setFilter } = setters
+
+  const [inicial, setInicial] = useState(true)
+  const [active, setActive] = useState(false)
+  const Handler = (e) => {
+    setFilter(e.target.value)
+  }
+
+  useEffect(() => {
+    if (filter.length > 0) {
+      setInicial(false)
+      setActive(true)
+    } else if (filter.length === 0) {
+      setActive(false)
+      setInicial(true)
     }
-  
-    useEffect(()=>{
-        if(filter.length > 0){
-            setInicial(false)
-            setActive(true)
-        }else if(filter.length === 0){
-            setActive(false)
-            setInicial(true)
-        }
-    },[filter])
-    const Return = () =>{
-      setFilter("")
-    }
+  }, [filter])
+  const Return = () => {
+    setFilter("")
+  }
   return (
     <MainContainer>
       <Headers>
         <div className="div">
-          <Link to="/" onClick={()=>Return()}>
+          <Link to="/" onClick={() => Return()}>
             <Back>
-                <ArrowBackIosIcon />
+              <ArrowBackIosIcon />
             </Back>
           </Link>
           <p>Busca</p>
@@ -54,11 +54,11 @@ const SearchPage = () => {
         <input placeholder="Restaurante" onChange={Handler} autoFocus />
       </SearchContainer>
       <Main>
-        {inicial &&(
-        <p className="central">Busque por nome de restaurante</p>
+        {inicial && (
+          <p className="central">Busque por nome de restaurante</p>
         )}
-        {active &&(
-        <CardImageF/>
+        {active && (
+          <CardImageF />
         )}
       </Main>
     </MainContainer>

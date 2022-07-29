@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import { primaryColor } from '../../theme/colors'
-import { Button } from '@mui/material'
 
 export const CardContainer = styled.div`
     border-radius: 8px;
@@ -58,9 +57,9 @@ export const CardButton = styled.div`
         font-size: 12px;
         width: 90px;
         letter-spacing: -0.29px;
-        border: solid 1px ${props=> props.checkCart.length>0 ? '#e02020' : primaryColor};
+        border: solid 1px ${props => props.checkCart.length > 0 ? '#e02020' : primaryColor};
         border-radius:8px 0px;
-        color:${props=> props.checkCart.length>0 ? '#e02020' : primaryColor};
+        color:${props => props.checkCart.length > 0 ? '#e02020' : primaryColor};
    }
 `
 export const Quantity = styled.div`

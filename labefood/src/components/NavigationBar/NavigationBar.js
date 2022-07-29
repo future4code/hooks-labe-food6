@@ -7,14 +7,14 @@ import shoppingCartW from '../../assets/footerImg/shopping-cart-w.png'
 import shoppingCart from '../../assets/footerImg/shopping-cart.png'
 import { useNavigate } from 'react-router-dom'
 import { IconButton } from '@material-ui/core'
-import { goToHome, goToCart, goToProfile } from '../../routes/cordinator'
+import { goToHome, goToCart, goToProfile } from '../../routes/coordinator'
 import { ContainerFooter } from "./styled"
 
 
 const NavigationBar = (props) => {
-  const navigate = useNavigate();
-  return (
-    <ContainerFooter>
+   const navigate = useNavigate();
+   return (
+      <ContainerFooter>
          <IconButton title={"Página principal"} onClick={() => goToHome(navigate)} aria-label="home">
             <img src={props.page === 'home' ? homePage : homePageW} alt={'Imagem de uma casa, represwentando a página principal'} />
          </IconButton>
@@ -27,7 +27,7 @@ const NavigationBar = (props) => {
             <img src={props.page === 'profile' ? avatar : avatarW} alt={'Imagem ilustrativa representando o perfil'} />
          </IconButton>
       </ContainerFooter>
-  );
+   );
 };
 
 export default NavigationBar;
