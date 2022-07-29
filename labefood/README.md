@@ -1,8 +1,6 @@
 <h1 align="center">
-
     <br>
     <p align="center" style="font-weight: bold;">🚀 Projeto LabeFood </p>
-
 </h1>
 
 </h1>
