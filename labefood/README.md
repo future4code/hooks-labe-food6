@@ -1,12 +1,20 @@
 <h1 align="center">
+
+    <br>
+    <p align="center" style="font-weight: bold;">🚀 Projeto LabeFood </p>
+
+</h1>
+
+</h1>
+<p align="center">
+<img src="./src/assets/logo.png" width="40%" height="20%"/>
+</p>
+
+<h1 align="center">
     <br>
     <p align="center" style="font-weight: bold;">🚀 Projeto LabeFood </p>
 </h1>
 
-<center>
-   <img src="./src/assets/logo.png" />
-</center
-  
 <br>
 
 <h1>
@@ -146,9 +154,8 @@ _Qualquer dúvida ou sugestão, chama no contatinho!_
 <br>
 
 <h2>
-  <a href='#top'>🔝 Voltar para o topo.</a>
+  <a href='#top'>🔝 Voltar ao topo.</a>
 </h2>
 
 <br>
 
-### Feito com 💕 e muita dedicação

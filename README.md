@@ -3,10 +3,12 @@
     <p align="center" style="font-weight: bold;">🚀 Projeto LabeFood </p>
 </h1>
 
-<center>
-   <img src="./src/assets/logo.png" />
-</center
-  
+
+</h1>
+<p align="center">
+<img src="./labefood/src/assets/logo.png" width="40%" height="20%"/>
+</p>
+
 <br>
 
 <h1>
