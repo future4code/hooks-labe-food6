@@ -3,10 +3,9 @@
     <p align="center" style="font-weight: bold;">🚀 Projeto LabeFood </p>
 </h1>
 
-
 </h1>
 <p align="center">
-<img src="./labefood/src/assets/logo.png" width="40%" height="20%"/>
+<img src="./src/assets/logo.png" width="40%" height="20%"/>
 </p>
 
 <br>
@@ -153,4 +152,3 @@ _Qualquer dúvida ou sugestão, chama no contatinho!_
 
 <br>
 
-### Feito com 💕 e muita dedicação
